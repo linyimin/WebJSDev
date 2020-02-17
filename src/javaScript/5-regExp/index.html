@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <style>
+
+        .right{
+            color: green;
+        }
+        .wrong{
+            color: red;
+        }
+
+        .main{
+            margin: 0;
+            height: 500px;
+            width: 800px;
+            margin: 10px auto;
+            border: 1px solid black;
+        }
+
+        .header{
+            margin: 0 auto;
+            height: 30px;
+            text-align: left;
+            vertical-align: middle;
+            background-color: rgb(228, 216, 216);
+        }
+        .input{
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: cornsilk;
+        }
+        .input li {
+            margin-bottom: 15px;
+        }
+
+        .input label {
+            display: inline-block;
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+            text-align: right;
+        }
+        .error {
+            color: #df3033;
+            margin-left: 10px;
+        }
+
+        .error_icon,
+        .success_icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url(./img/error.png) no-repeat;
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+
+        .success {
+            color: #40b83f;
+            margin-left: 10px;
+        }
+
+        .success_icon {
+            background-image: url(./img/success.png);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" class="name"/><span>请输入用户名</span>
+      
+    </div>
+    <div>
+        <button id="btn">提交</button>
+    </div>
+  
+    <div class="main">
+        <div class="header">注册用户</div>
+        <div class="input">
+            <form>
+                <ul>
+                    <li>
+                        <label for="tel">手机号:</label>
+                        <input type="text" class="inp" id="tel">
+                        <span class="error">
+                          
+                        </span>
+                    </li>
+
+                    <li>
+                        <label for="">QQ:</label>
+                        <input type="text" class="inp" id="qq">
+                        <span></span>
+                    </li>
+                    <li>
+                        <label for="">昵称:</label>
+                        <input type="text" class="inp" id="nc"/>
+                        <span></span>
+                    
+                    </li>
+                </ul>
+            </form>
+           
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="validate.js"></script>
+</body>
+</html>

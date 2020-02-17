@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+
+<body>
+    <form name="register" action="demo.php" method="get">
+        <label for="name">用户名：</label> <input type="text" name="username" id="name" value="请输入用户名" maxlength="7"><br>
+        密&nbsp;码：<input type="password" name="pwd"><br>
+        年&nbsp;龄：<input type="number" name="age" maxlength="2"><br>
+        <!-- 单选框，同时只能选中一个，name必须一直 -->
+        性&nbsp;别：
+        <label for="nan">男</label><input type="radio" name="sex" value="男" id="nan">
+        <label for="nv">女</label><input type="radio" name="sex" value="女" id="nv" checked="checked"><br>
+        <!-- 复选框，可以同时多选，name只必须保持一致 -->
+        爱&nbsp;好：
+        <input type="checkbox" name="hobby" value="旅游" id="tra"> <label for="tra">旅游</label> 
+        <input type="checkbox" name="hobby" value="游戏" checked="checked" id="game"><label for="game">有效</label>  <br>
+        <!-- 数字输入文本框，只可以输入文本 -->
+        手机号码<input type="number" maxlength="11"><br>
+        <!-- 普通的按钮，一般有js响应 -->
+        <input type="button" value="获取数据验证码"><br>
+        <!-- 上传文件控件 -->
+        <input type="file" value="上传文件"><br>
+        出生地：
+        <!-- 选择元素 selected属性默认值-->
+        <select>
+            <option>河南</option>
+            <option selected="selected">北京</option>
+            <option>上海</option>
+        </select>
+        <br>
+        <!-- 文本域输入 -->
+        备注说明：
+        <textarea rows="4" cols="50">请输入....</textarea><br>
+        <!--submit提交按钮可以把表单的数据提交给服务器 -->
+        <input type="submit" value="免费注册">
+        <!--reset按钮把表单元素重新设置 -->
+        <input type="reset" value="重新设置">
+    </form>
+</body>
+
+</html>

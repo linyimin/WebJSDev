@@ -1,0 +1,39 @@
+body{
+    font:16px/28px "微软雅黑"
+}
+
+h1{
+    text-align: center;
+    font-weight: 400;
+}
+
+p{
+    text-indent: 2em;
+    line-height: 26px;
+}
+a{
+    text-decoration: none;
+    color: burlywood;
+}
+
+.img{
+    text-align: center;
+}
+
+.line{
+    margin: 5px;
+    width: auto;
+    height: 1px;
+    background-color: black;
+}
+
+.search{
+    color: #666;
+    width: 170px;
+}
+
+.btn{
+    font-weight: 700;
+}
+
+

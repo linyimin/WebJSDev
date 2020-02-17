@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css选择器</title>
+    <style>
+        /* 选择器{颜色} */
+        /* 给谁改样式{怎么该样式} */
+        /* 基础选择器--单元素选择器 */
+
+        /* 1:标签选择器--写上标签名，把某一类的标签全部选中 ，统一设置颜色*/
+        h4 {
+            color: green;
+        }
+
+        /* 2:类选择器--写上class属性值，把该class属性值的所有标签选择 */
+        /* 类选择器口角：样式点定义，结构类（class）调用 一个或多个 开发最常用 */
+        .red {
+            color: red;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+        }
+
+        .redBk {
+            background-color: red;
+        }
+
+        .greenBk {
+            background-color: green;
+        }
+
+        /* 3：id选择器 口诀：样式#定义，结构id调用，只能调用一次，别人勿调用 */
+        #pink {
+            color: blue;
+        }
+
+        /* 4:*通配符选择器 选择所有的标签 */
+        * {
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>选择器就是选择标签的作用</h4>
+    <h4>1：基础选择器--单个选择器组成。标签选择器，类选择器，id选择器，通配符选择器</h4>
+    <ul>
+        <li class="red">刘德华</li>
+        <li clas="red">赵培山</li>
+        <li>毛泽东</li>
+    </ul>
+    <h4>class属性多样式使用样式直接空格隔开</h4>
+    <div class="box redBk">红色</div>
+    <div class="box greenBk">绿色</div>
+    <div class="box redBk">红色</div>
+    <div id="pink">梦中爱人</div>
+</body>
+
+</html>

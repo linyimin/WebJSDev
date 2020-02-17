@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品查询</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            width: 50px;
+        }
+
+        table {
+            width: 500px;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        .seacrh {
+            width: 600px;
+            margin: 20px auto;
+        }
+
+        td,
+        th {
+            border: 1px solid #000;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="seacrh">
+        按照价格查询:<input type="text" class="start" />-<input type="text" class="end" /><button id="btnSearch">搜索</button>
+        按照商品名称查询：<input type="text" class="name" /><button id="btnNameQuery">查询</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>产品名称</th>
+                <th>产品价格</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        let data = [{
+                id: 1,
+                name: "小米",
+                price: 1999
+            },
+            {
+                id: 2,
+                name: "华为",
+                price: 2999
+            },
+            {
+                id: 3,
+                name: "apple",
+                price: 6999
+            }
+        ];
+
+        //填充数据
+        let tabBody = document.querySelector("tbody");
+        let btnSearch = document.getElementById("btnSearch");
+        let stTextPrice = document.querySelector(".start");
+        let endTextPrice = document.querySelector(".end");
+        let nameText = document.querySelector(".name");
+        let btnQuery = document.getElementById("btnNameQuery");
+
+
+        function fillData(tabData) {
+            tabBody.innerHTML = "";
+            tabData.forEach(function (cur, index) {
+                console.log(cur);
+                let tr = document.createElement("tr");
+                tr.innerHTML = "<td>" + cur.id + "</td><td>" + cur.name + "</td><td>" + cur.price + "</td>"
+                tabBody.appendChild(tr);
+            });
+        }
+
+
+        fillData(data);
+
+
+        btnSearch.addEventListener("click", function (e) {
+            //alert(stTextPrice.value);
+            let newData = data.filter(function (value) {
+                return value.price >= stTextPrice.value && value.price <= endTextPrice.value;
+            });
+            //插入
+            fillData(newData);
+        });
+
+
+        btnQuery.onclick = function (e) {
+            //alert(nameText.value);
+            let newData = [];
+            //查询唯一的数据时，查询效率高，查询满足条件，就终止后面的数据
+            //forEach是遍历元素，不会终止，始终会遍历所有的元素
+            data.some(function (cur) {
+                if (cur.name === nameText.value) {
+                    newData.push(cur);
+                    return true;
+                }
+            });
+            fillData(newData);
+        }
+    </script>
+</body>
+
+</html>

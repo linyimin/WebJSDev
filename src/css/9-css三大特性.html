@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS三大特性</title>
+    <style>
+        /*1：样式层叠性 --就近原则*/
+        /* 相同的选择器设置相同的样式，导致样式冲突，层叠就是解决样式冲突问题 */
+        div {
+            color: red;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        div {
+            color: green;
+            background-color: gray;
+        }
+
+        /* 2：继承性 --子元素继承父元素的样式，只继承了文字相关属性text- font- line- 以及color*/
+        body {
+            /* 字体大小12px，行高是字体大小的1.5倍 */
+            font: 12px/1.5 'Microsoft YaHei';
+        }
+
+        /* 3：优先级 !important>行内样式>id选择器>类选择器 伪类选择器>标签选择器>继承性*/
+        p {
+            color: red;
+        }
+
+        .p1 {
+            color: green !important;
+        }
+
+        #p1 {
+            color: hotpink;
+        }
+
+        .father {
+            color: hotpink;
+        }
+
+        /* 3.1：权重叠加 -- 复合选择器有权重叠加 */
+        li {
+            color: red;
+        }
+
+        ul li {
+            color: green;
+        }
+
+        .nav li {
+            color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>1：样式重叠 就近原则，相同选择器进行比较</h4>
+    <div>我的世界</div>
+    <h4>2：继承性 子元素可以继承父元素的类型，p继承body</h4>
+    <div>
+        <span>龙生龙凤凤生风</span>
+    </div>
+    <p>我没有文字大小属性，继承父元素body大小=12px 好高为u12*1.5</p>
+
+    <h4>3：优先级--!important>行内式>id选择器>类选择器>标签选择器>继承性</h4>
+    <p class="p1" id="p1">样式优先级显示</p>
+
+    <h4>4：权重叠加 -- 复合选择器 权重只会叠加不会进位</h4>
+    <div>
+        <ul class="nav">
+            <li>我是小莉，练习权重叠加，权重只会叠加不会进位</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

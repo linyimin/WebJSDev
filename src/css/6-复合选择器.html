@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+    <style>
+        /* 复合选择器是建立在基础选择器，对基础选择器进行组合形成 */
+        /* 1：后代选择器 空格符号 父元素 孩子元素 {} 选择孩子的元素*/
+        ul li {
+            color: red;
+        }
+
+        ul li a {
+            color: seagreen;
+        }
+
+        .child li {
+            color: greenyellow;
+        }
+
+        #main li {
+            color: gold;
+        }
+
+        /* 2:子选择 >符号分隔 就是选择某元素的最近一级的子元素 */
+        .nav>a {
+            color: hotpink;
+        }
+
+        /* 3:并集选择器 ,逗号分隔  同时选择多个标签设置样式 通常用于集体声明*/
+        #game p,
+        #game a,
+        .pig li {
+            color: pink;
+        }
+
+        /* 4:伪类选择器 ：冒号 向某些选择器添加特殊效果，比如给链接添加特殊效果，或者选择第1，n个元素 */
+        /* :hover :first-child */
+        /* 4.1 链接伪选择器  love hate link visited hover active顺序不能乱*/
+        /* 4.1.1 a:link把未选择的链接，设置相关样式 */
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* 4.1.2 已访问过的链接 */
+        a:visited {
+            color: orange;
+        }
+
+        /* 4.1.3 鼠标浮动上去的链接 */
+        a:hover {
+            color: skyblue;
+        }
+
+        /*4.1.4 鼠标按下还没有放开时的颜色 */
+        a:active {
+            color: red;
+        }
+
+        /* 4.2 :focus 用于获取表单获取焦点的元素 */
+        input:focus {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>1：后代选择器</h4>
+    <ul>
+        <li>我是ul的第 1 个child</li>
+        <li>我是ul的第 2 个child</li>
+        <li><a href="#">我是孙子超链接</a></li>
+        <span> 我是ul的第 4个child p</span>
+    </ul>
+    <ol id="main">
+        <li>我是ol的第 1 个孩子</li>
+        <li>我是ol的第 2 个孩子</li>
+    </ol>
+    <ol class="child">
+        <li>我是ol的第 1 个孩子</li>
+        <li>我是ol的第 2 个孩子</li>
+    </ol>
+
+    <h4>2：子元素选择器</h4>
+    <div class="nav">
+        <a href="#">亲儿子</a>
+        <p><a href="#">孙子级</a></p>
+        <a href="#">亲儿子2</a>
+    </div>
+
+    <h4>3:并集选择器</h4>
+    <div id="game">
+        <a href="#">熊二</a>
+        <p>熊大</p>
+        <span>光头强</span>
+        <ul class="pig">
+            <li>小猪佩奇</li>
+            <li>猪爸爸</li>
+            <li>猪妈妈</li>
+        </ul>
+    </div>
+
+    <h4>4：伪类选择器 连链接</h4>
+    <a href="http://wwww.baidu.com" target="_blank">百度</a>
+    <a href="#" target="_blank">未知链接</a>
+    <input type="text">
+    <input type="text">
+
+</body>
+
+</html>

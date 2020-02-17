@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        p {
+            text-align: left;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1：输入h1+tag自动生成下面的标签 -->
+    <h2></h2>
+    <!-- 2：h2{输入内容}+tag，生成如下内容 -->
+    <h2>输入内容</h2>
+    <!-- 3：.main+tab 生成如下代码 -->
+    <div class="main"></div>
+    <!-- 3.1 p.nav + tab生成如下 -->
+    <p class="nav"></p>
+    <!-- 4：#name+tab 生成如下代码 -->
+    <div id="name"></div>
+    <!-- 5.使用">“输入嵌套标签，”+" 输入并列的兄弟标签，"^"上级元素 -->
+    <!-- 5.1：div>div#imgs{put some imgs here} -->
+    <div>
+        <div id="imgs">pub some imgs here</div>
+    </div>
+    <!-- 5.2：div#left+div#right -->
+    <div id="left"></div>
+    <div id="right"></div>
+    <!-- 5.3：div#top>p^div#bottom -->
+    <div id="top">
+        <p></p>
+    </div>
+    <div id="botton"></div>
+    <!-- 6.使用"{}“对标签分组及使用”*"生成多个相同的标签 -->
+    <!-- 6.2：ul>li*5 -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- 7：$自增符号 -->
+    <!--7.1: ul>li*3>img[src="./img/$.jpg" alt="img $"] -->
+    <ul>
+        <li><img src="./imgs/1.jpg" alt="img 1"></li>
+        <li><img src="./imgs/2.jpg" alt="img 2"></li>
+        <li><img src="./imgs/3.jpg" alt="img 3"></li>
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+</head>
+
+<body>
+    <!-- 表格的属性只能写的table标签中 -->
+    <table border="1" align="center" cellpadding="5px" cellspacing="0px" width="400px">
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>相关连接</td>
+        </tr>
+        <tr>
+            <td>刘德华</td>
+            <td>男</td>
+            <td>30</td>
+            <td><a href="#">简介</a></td>
+        </tr>
+        <tr>
+            <td>刘德华</td>
+            <td>男</td>
+            <td>30</td>
+            <td><a href="#">简介</a></td>
+        </tr>
+    </table>
+
+    <br>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>刘德华</td>
+            <td>男</td>
+            <td>30</td>
+        </tr>
+    </table>
+    <!-- 单元格合并
+        1：确定是跨行合并或是跨列合并
+        2：确定合并单元格开始元素，跨行是最上行的元素，跨列是最左侧列单元格
+        3：删除多余的单元格
+    -->
+    <br>
+    <table align="center" border="1px" cellspacing="0px" cellpadding="5px" width="300px">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">刘德华</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>刘德华</td>
+                <td>男</td>
+                <td rowspan="2">30</td>
+            </tr>
+            <tr>
+                <td>刘德华</td>
+                <td>男</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>

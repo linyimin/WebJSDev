@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素的显示类型</title>
+    <style>
+        /* 元素显示类型三种 */
+        /* 1：块级元素 */
+        .main {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 2：行内元素 */
+        /* 3：行内块元素 */
+
+        /* 把行内元素转换块级元素  display: block;*/
+        .block a {
+            display: block;
+            background-color: gray;
+            width: 150px;
+            height: 30px;
+        }
+
+        /* 把块级元素转换为行元素 */
+        .inline div {
+            display: inline;
+            background-color: lightslategray;
+        }
+
+        /* 转换为行内块级元素 */
+        .inline-block span {
+            display: inline-block;
+            width: 300px;
+            background-color: mediumorchid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">我是块级元素</div>
+    我的小弟
+    <span>我的span行内元素</span>
+    <div class="block">
+        <a href="http://www.baidu.com" target="_blank">百度</a>
+        <a href="http://taobao.com" target="_blank">淘宝</a>
+    </div>
+    <div class="inline">
+        <div>我是A块级元素</div>
+        <div>我是B块级元素</div>
+    </div>
+    <div class="inline-block">
+        <span>我们行内元素span1</span>
+        <span>我们行内元素span2</span>
+    </div>
+
+</body>
+
+</html>
