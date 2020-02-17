@@ -26,7 +26,7 @@ function promise_test() {
 
     console.log("异步函数等待之前");
 
-    //等待异步指向结束，会阻塞
+    //等待异步的回调函数定义，该部分不会
     instance.then(success => {
         console.log("success", success);
 
