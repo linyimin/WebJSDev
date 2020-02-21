@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+    <style>
+        table {
+            width: 400px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid pink;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table align="center" cellspacing="0px" cellpadding="5px">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">刘德华</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>刘德华</td>
+                <td>男</td>
+                <td rowspan="2">30</td>
+            </tr>
+            <tr>
+                <td>刘德华</td>
+                <td>男</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>

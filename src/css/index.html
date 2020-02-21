@@ -21,7 +21,7 @@
 
             /* 字体属性相关 */
             /* 文字大小 */
-            font-size: 14px;
+            font-size: 18px;
             /* 文字的字体 */
             font-family: "微软雅黑", Arial, Helvetica, sans-serif;
             /* 字体加粗效果，可以为数组，normal=400 把加粗的变正常，bold=700加粗  */
@@ -32,26 +32,44 @@
         }
 
         /* 字体简写 font:font-style font-weight font-size/line-height font-family  swsf*/
-        div {
+        span {
             font: italic bold 14px "微软雅黑";
+        }
+
+        .nav a {
+            display: block;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            background-color: rgb(83, 87, 88);
+            color: white;
+            text-decoration: none;
+            padding-left: 20px;
+        }
+
+        a:hover {
+            background-color: tomato;
         }
     </style>
 </head>
 
 <body>
     <p>css学习</p>
-    <div>css学习</div>
-    <ul>
-        <li><a href="1-css选择器.html">css选择器</a></li>
-        <li><a href="2-字体文本.html">字体和文本样式</a></li>
-        <li><a href="3-css引入方式.html">css引入方式</a></li>
-        <li><a href="4-新闻.html">综合练习</a></li>
-        <li><a href="6-复合选择器.html">复合类选择器</a></li>
-        <li><a href="7-元素显示类型.html">元素显示类型</a></li>
-        <li><a href="8-background.html">背景相关样式</a></li>
-        <li><a href="demo/8-五彩导航.html">五彩导航</a></li>
-        <li><a href="9-css三大特性.html">css大特性</a></li>
-    </ul>
+
+    <div class="nav">
+        <a href="1-css选择器.html">1-CSS选择器</a>
+        <a href="2-字体文本.html">2-字体和文本样式</a>
+        <a href="3-css引入方式.html">3-CSS引入方式</a>
+        <a href="4-新闻.html">4-综合练习</a>
+        <a href="6-复合选择器.html">5-复合类选择器</a>
+        <a href="7-元素显示类型.html">6-元素显示类型</a>
+        <a href="8-background.html">7-背景相关样式</a>
+        <a href="demo/8-五彩导航.html">8-五彩导航</a>
+        <a href="9-css三大特性.html">9-CSS三大特性</a>
+        <a href="10-boxModel.html">10-盒子模型</a>
+    </div>
+
+
 </body>
 
 </html>

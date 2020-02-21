@@ -1,0 +1,27 @@
+/*
+目的：解决样式代码重复问题
+1：普通混合
+2：不带输出的混合
+*/
+.nav {
+  color: #fff;
+  width: 200px;
+  border: 1px solid green;
+}
+.nav .nav1 {
+  border: 1px solid green;
+  color: red;
+  height: 100px;
+  width: 200px;
+}
+.nav .nav2 {
+  border: 1px solid green;
+  color: red;
+  height: 200px;
+  width: 100px;
+}
+#wrap .sjx {
+  border-width: 40px;
+  border-style: dashed dashed dashed solid;
+  border-color: transparent transparent transparent red;
+}

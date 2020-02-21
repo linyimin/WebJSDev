@@ -4,10 +4,9 @@
 function promise_test() {
     //1.1 promise对象生成时，函数立即执行
     const instance = new Promise((resolve, reject) => {
-
         //异步函数的函数体定义，下面的循环不上异步，也是同步执行的
         let sum = 0;
-        for (let i = 1; i < 100000000; i++) {
+        for (let i = 1; i < 1000000000; i++) {
             sum += i;
         }
         console.log("异步函数体定义 sum:", sum);
@@ -26,7 +25,6 @@ function promise_test() {
 
     console.log("异步函数等待之前");
 
-    //等待异步的回调函数定义，该部分不会
     instance.then(success => {
         console.log("success", success);
 
@@ -42,7 +40,9 @@ function sayHi(name) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(name);
-        }, 2000)
+        }, 2000);
+
+        console.log("sayHi ddddddd")
     })
 }
 

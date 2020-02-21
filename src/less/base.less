@@ -1,0 +1,33 @@
+//注释
+/*
+多行注释
+*/
+
+//1:变量
+@clr:pink;
+@margin:margin; //属性key使用变量 @{margin}
+@selector:#nav;//选择器使用变量 @{selector}
+
+//2:嵌套规则 .nav div  &符号提升样式级别，作为平级使用
+
+*{
+    padding:0;
+    @{margin}:0;
+}
+
+.nav{
+    color: @clr;
+    div{
+        background-color: red;
+        &:hover{//.nal div:hover
+            background-color: green;
+        }
+    }
+}
+
+@{selector}{
+    color: @clr;
+}
+
+
+

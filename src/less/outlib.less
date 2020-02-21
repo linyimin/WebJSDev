@@ -1,0 +1,26 @@
+.triangle(@_){
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+//匹配模式1：L R时一个字母匹配
+//在每一次调用一下混合时，会自动调用同名的混合，且参数为@_
+.triangle(L,@clr,@w){
+    width: 0;
+    height: 0;
+    border-width: @w;
+    border-style: dashed solid dashed dashed;
+    border-color: transparent @clr transparent transparent;
+    overflow: hidden;
+}
+.triangle(R,@clr,@w){
+    border-width: @w;
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent  @clr;
+}
+
+// @arguments
+.getBorder(@w,@style,@clr){
+    border: @arguments;
+}

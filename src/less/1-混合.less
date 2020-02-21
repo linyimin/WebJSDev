@@ -1,0 +1,37 @@
+//混合就是将一系列属性从一个规则集引入到另外一个规则集的方式
+/*
+目的：解决样式代码重复问题
+1：普通混合
+2：不带输出的混合
+*/
+@import './outlib.less';
+
+//1：普通混合 --可以有参数，参数也可以有默认值
+.juzhong(){
+    border: 1px solid green;
+    color: red;
+}
+
+.center(@h:200px,@w:300px){
+    height: @h;
+    width: @w;
+}
+
+.nav{
+    color: #fff;
+    width: (100+100px);
+    .getBorder(1px,solid,green);
+    .nav1{
+        .juzhong;
+        .center(100px,200px);
+    }
+    .nav2{
+        .juzhong;
+        .center(@w:100px);//命名参数使用
+    }
+
+}
+
+#wrap .sjx {
+    .triangle(R,red,40px);
+}

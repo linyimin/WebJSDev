@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+        /* 取消所有元素默认的外边距和内边距 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 布局三大核心：盒子模型，浮动，定位实现布局
+            1：先准备好相关网页元素，网页元素基本是盒子模型
+            2：利用CSS设置好盒子样式，然后排放到相应的位置
+            3：网盒子里面装内容 */
+        /*
+        核心模型四个概念：
+        1：border 边框
+        2: content内容
+        3: padding 内边距
+        4: mgrgin 外边距 */
+        /* 1：border边框 */
+        .box {
+            width: 200px;
+            height: 100px;
+            /*1.1 边框的宽度 */
+            border-width: 10px;
+            /* 1.2 边框的颜色 */
+            border-color: crimson;
+            /* 1.3 边框的样式 solid实线 dashed:虚线 dotted：点线*/
+            border-style: solid;
+            /* 1.4 复合样式写法 */
+            /* border: 1px solid red; */
+            border-top: 10px dotted green;
+            /* 1.5 边框的大小影响盒子的大小，边框有上下，大小为两份 */
+            border-left: 10px dashed green;
+
+            /* 2.1 内边距 padding大小会影响盒子大小，但当没设置height/width不会影响盒子大小*/
+            padding-left: 2em;
+            padding-top: 2px;
+            /* padding: 5px; 四个边框5px*/
+            /* padding: 5px 10px;  上下5px 左右10px*/
+            /* padding: 5px 10px 20px;  上5px 左右10px 下20px*/
+            /* padding: 5px 10px 20px 30px;  上5px 右10px 下20px 左30px 顺时针*/
+        }
+
+        .box1 {
+            width: 200px;
+            height: 100px;
+            background-color: gray;
+            border: 1px solid;
+            /* margin-top: 10px; */
+            margin: 10px 20px 30px 40px;
+        }
+
+        /*二：块级元素水平居中设置，设置一个宽度，左右外边距auto */
+        /*三：行内元素或行内块元素的水平居中，设置父元素 text-align: center; */
+        .box2 {
+            height: 100px;
+            width: 300px;
+            background-color: pink;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* 四：外边框塌陷问题  嵌套盒子会出现 解决：1:设置父元素上边框，2:上边框内边距  3:overflow: hidden;*/
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* border-top: 1px solid transparent; */
+            /* padding-top: 1px; */
+            /* 解决外边距的塌陷问题 */
+            overflow: hidden;
+        }
+
+        .son {
+            width: 150px;
+            height: 100px;
+            margin-top: 20px;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">我的盒子世界</div>
+    <div class="box1">我是盒子2，测试盒子的外边距</div>
+    <div class="box2">
+        <span>测试块级元素，水平居中效果</span>
+        <img src="img/logo.png">
+    </div>
+
+    <div class="father">
+        <div class="son">外边距塌陷问题，设置孩子margin-top，父元素跟着一起下来了</div>
+    </div>
+
+</body>
+
+</html>
