@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级效果</title>
+    <style>
+        .radius {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: pink;
+            box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .box1 {
+            width: 150px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: pink;
+
+        }
+
+
+        /* 盒子的阴影效果 */
+        .box1:hover {
+            box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px 20px 30px 40px;
+            background-color: pink;
+        }
+
+        /* 2：文字阴影 */
+        h3 {
+            text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>1-圆形盒子</h3>
+    <div class="radius"></div>
+    <h3>2-圆角矩形 --浮动上去有阴影</h3>
+    <div class="box1">
+    </div>
+    <h3>3-四个圆角可以单独设置</h3>
+    <div class="box2"></div>
+</body>
+
+</html>

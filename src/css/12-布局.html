@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三种布局方式</title>
+    <!-- 一：标准流   就是网页元素默认的展示方法，行内元素，块元素，行内块元素
+    1.1 行内元素
+    1.2 块元素
+    1.3 行内块元素 -->
+
+    <!-- 二：浮动 float
+    1：浮动可以改变元素标准默认的排列方式
+    典型应用：可以让多个块元素一行内排列
+    布局原则：1 多个块级元素纵向排列找标准流，多个块级元素的横向排列找浮动
+    float:none left right 创建浮动，将其移动到左侧边缘或者右侧边缘及另一个浮动框的边缘 
+        特性：  1：浮动元素会脱离标准流（脱标），不再保留原来的位置
+                2：浮动元素会一行内显示并且元素顶部对齐
+                3：浮动元素会具有行内块元素的特性
+    用法：浮动元素经常和标准的夫元素搭配使用
+-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+
+        .box1 {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            /* float: left; */
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            float: left;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            float: left;
+        }
+
+        /* 实例测试 */
+        .main {
+            height: 200px;
+            width: 800px;
+            margin: 0 auto;
+            background-color: seagreen;
+        }
+
+        .left {
+            width: 300px;
+            height: 200px;
+            background-color: gray;
+            float: left;
+        }
+
+        .right {
+            width: 500px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+
+        .list {
+            width: 830px;
+            margin: 10px auto;
+            border: 3px solid red;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .list li {
+            width: 200px;
+            height: 200px;
+            float: left;
+            background-color: pink;
+            margin-right: 10px;
+        }
+
+        .list .last {
+            margin-right: 0;
+
+        }
+
+        /* 清除浮动--父元素需要根据子元素自动计算高度，float使子元素不占据位置，导致高度为0 */
+        /* 清除浮动范围：父元素下的所有孩子的浮动性去掉，只影响该父节点下子元素
+          1：额外标签法：清除元素必须是块级元素
+           */
+        .clear {
+            /* clear: both; */
+        }
+
+        /* 2:overflow元素 */
+        .list1 {
+            /*可以清除.list 子元素的浮动  缺点是溢出部分不显示*/
+            overflow: hidden;
+        }
+
+        /* 3：使用after伪元素清除浮动 */
+        /* .clearfix::after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
+
+        */
+
+        /* 4：双伪元素清除法 */
+        .clearfix:after,
+        .clearfix:before {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        /* ie6 7专用 */
+        .clearfix {
+            *zoom: 1;
+        }
+    </style>
+
+    <!-- 三：定位： -->
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <span class="box3"></span>
+
+    <div class="main">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+    <h4>1：清除浮动--让父元素根据子元素高度确定高度</h4>
+    <ul class="list clearfix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="last">4</li>
+        <!-- <div class="clear"></div> -->
+    </ul>
+
+    <h1>测试</h1>
+</body>
+
+</html>
