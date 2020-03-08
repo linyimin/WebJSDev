@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../package/vue.js" type="text/javascript" charset="UTF-8"></script>
+
+    <title>vue组件</title>
+</head>
+
+<body>
+
+    <div id="app">
+        {{message}}
+        <p>Using mustaches: {{ rawHtml }}</p>
+        <span>Using v-html directive: <span v-html="rawHtml"></span></span>
+        <br>
+        <button id="keyid" v-bind:disabled="isButtonDisabled" v-on:click="onClick">按钮</button>
+        {{ ok ? 'YES' : 'NO' }}
+        <a v-bind:href="url" v-on:click="doSomething">百度</a>
+        <a :href="url">百度</a>
+        <a :[href]="url">{{fullName}}</a>
+        <h1>自定义组件</h1>
+        <button-counter title="北京"></button-counter>
+        <button-counter title="南京"></button-counter>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
