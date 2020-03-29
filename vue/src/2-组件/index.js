@@ -9,6 +9,8 @@ let vm = new Vue({
         href: "href",
         firstName: "lin",
         lastName: "yimin",
+        title: "南京title的 bind",
+        lovingVue: true,
     },
     methods: {
         doSomething: function (e) {
@@ -17,6 +19,11 @@ let vm = new Vue({
         },
         onClick: function (e) {
             console.log(e);
+        },
+        onEvent(strVal) {
+            alert(strVal);
+            // debugger
+            console.log("onEvent", strVal);
         }
     },
     computed: {
@@ -53,8 +60,36 @@ Vue.component('button-counter', {
             count: 0
         }
     },
+    methods: {
+        counter() {
+            // debugger
+            this.count++;
+            // this.title = "商丘";
+            //this.$emit('myEvent')
+            this.$emit('my-event', '自定义参数');
+        }
+    }
+    ,
     created: function () {
         console.log("button-counter created");
     },
-    template: '<button v-on:click="count++">You clicked me {{title}} {{ count }} times.</button>'
+    template: '<button v-on:click="counter()">You clicked me {{title}} {{ count }} times.</button>'
+})
+
+//新组件 //v-model默认绑定值更新
+Vue.component('base-checkbox', {
+    model: {
+        prop: 'checked',
+        event: 'change'
+    },
+    props: {
+        checked: Boolean
+    },
+    template: `
+      <input
+        type="checkbox"
+        v-bind:checked="checked"
+        v-on:change="$emit('change', $event.target.checked)"
+      >
+    `
 })

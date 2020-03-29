@@ -22,8 +22,10 @@
         <a :href="url">百度</a>
         <a :[href]="url">{{fullName}}</a>
         <h1>自定义组件</h1>
+        <input type="text" v-model="title"></input>
         <button-counter title="北京"></button-counter>
-        <button-counter title="南京"></button-counter>
+        <button-counter :title="title" v-on:my-event="onEvent"></button-counter>
+        <base-checkbox v-model="lovingVue"></base-checkbox>
     </div>
     <script src="index.js"></script>
 </body>
